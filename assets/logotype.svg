@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="houseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a4d2e"/>
+      <stop offset="100%" style="stop-color:#2d6b46"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#houseGradient)"/>
+  <!-- House icon -->
+  <path d="M50 20L25 40V75H40V60H60V75H75V40L50 20Z" fill="#c9a962"/>
+  <!-- Chimney -->
+  <rect x="65" y="30" width="8" height="15" fill="#c9a962"/>
+  <!-- Roof accent -->
+  <path d="M50 20L20 42H80L50 20Z" fill="#2d6b46"/>
+  <path d="M50 20L50 15L55 20H45Z" fill="#c9a962"/>
+</svg>
