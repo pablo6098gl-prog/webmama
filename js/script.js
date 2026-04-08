@@ -368,13 +368,22 @@
         },
 
         sendForm(data) {
-            // Simulación de envío exitoso
-            console.log('Formulario enviado:', data);
-
-            // Mostrar mensaje de éxito
-            this.showMessage('¡Gracias! Tu mensaje ha sido enviado. Te contactaremos pronto.', 'success');
-
-            // Limpiar formulario
+            const phoneNumber = '50258741866';
+            
+            const mensajeWhatsApp = `*Nuevo mensaje desde la web*\n\n` +
+                `*Nombre:* ${data.nombre}\n` +
+                `*Email:* ${data.email}\n` +
+                `*Teléfono:* ${data.telefono || 'No proporcionado'}\n` +
+                `*País:* ${data.pais || 'No proporcionado'}\n` +
+                `*Servicio de interés:* ${data.interes}\n` +
+                `*Mensaje:* ${data.mensaje}`;
+            
+            const encodedMessage = encodeURIComponent(mensajeWhatsApp);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+            
+            this.showMessage('¡Gracias! Serás redirigido a WhatsApp para enviar tu mensaje.', 'success');
             this.form.reset();
         },
 
